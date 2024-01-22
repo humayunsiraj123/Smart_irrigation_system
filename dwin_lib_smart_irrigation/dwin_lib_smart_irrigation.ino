@@ -245,7 +245,7 @@ void setup() {
 
   }
 
-  delay(1000);
+  //delay(1000);
 
   //initialization and assignment
 
@@ -830,6 +830,8 @@ void onHMIEvent(String address, int lastByte, String message, String response){
      Serial.println(getWordReply(response,0),HEX);
      if(getWordReply(response,0)==1){
       hmi.setVPWord(0x9100,0);
+      hmi.setVPWord(0x9000,0);
+      hmi.setVPWord(0x9500,0);
       hmi.setPage(0);
      
         for(int i =0 ; i<EEPROM.length();i++)
